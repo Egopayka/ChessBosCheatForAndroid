@@ -1,8 +1,12 @@
+def print_rectangle(m, n):
+    if m <= 0 or n <= 0:
+        print("Введите положительные значения для длины и ширины прямоугольника.")
+        return
+    
+    rectangle = [" " + "A" * m] + ["A" + " "*(m-2) + "A"]*(n-2) + [" " + "A" * m]
+    print("\n".join(rectangle))
 
-def print_alphabet():
-    alphabet = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя'
-    for i in range(0, len(alphabet), 5):
-        line = alphabet[i:i+5]
-        print("|".join([c.upper() + c for c in line]), end="\n" + "-" * 20 + "\n" * (i != len(alphabet) - 5))
+length = int(input("Введите длину прямоугольника: "))
+width = int(input("Введите ширину прямоугольника: "))
+print_rectangle(length, width)
 
-print_alphabet()
